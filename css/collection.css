@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+body,html{height: 100%; width: 100%;}
+/* left_nav */
+.left_nav{width: 12%; float: left;}
+
+.ham_menu{width: 20px; height: 12px; position: absolute; cursor: pointer; display: none; z-index: 500; top: 20px; left: 20px; }
+.ham_menu span{display: block; width: 20px; height: 1px; background-color: black; position: absolute; top: 50%; transform: translateY(-50%); transition: all 0.3s;}
+.ham_menu span::before{content: ""; display: block; width: 20px; height: 1px; background-color: black; position: absolute; top: -6px; transition: all 0.3s;}
+.ham_menu span::after{content: ""; display: block; width: 20px; height: 1px; background-color: black; position: absolute; top: 6px;  transition: all 0.3s;}
+
+
+.ham_menu span.on{background-color: transparent;}
+.ham_menu span.on::before{top: 0; transform: rotate(45deg);}
+.ham_menu span.on::after{top: 0; transform: rotate(-45deg);}
+
+.logo{position: fixed; left: 30px; top: 20px;}
+.logo a{display: block;}
+.logo a img{width: 90px; height: 26px;}
+
+.fix{position: fixed; width: 10%; height: 100%; left: 30px; top: 50px;}
+
+.nav{margin-top: 20px;}
+.main{font-size: 14px;}
+.main > li{margin-bottom: 10px;}
+.main > li > a{}
+
+.sub{display: none; margin: 15px 0;}
+.sub li{margin-bottom: 5px;}
+.sub li a{}
+
+/* aside-right*/
+.right{width: 88%; float: right; }
+
+.header{width: 100%; height: 85px;}
+
+/* 1st child that using 100% width */
+.login_section{display: flex; justify-content: right; padding: 20px 10px; position: fixed;
+top: 0; z-index: 100; right: 0;}
+.login_section li{}
+.login_section li a{display: block; font-size: 11px; padding: 0 10px;}
+
+/* 2nd child that using 50% width */
+.page_in{width: 50%; padding-right: 15px; float: left; margin-top: 53px;}
+.page_in li{display: inline-block;}
+.page_in li a{display: block; font-size: 13px; color: #888; font-size: 11px;}
+
+
+
+/* section */
+.section{}
+.collect_list{width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap;}
+.collect_list li{width: 49%; position: relative; margin-bottom: 1.5%;}
+.collect_list li a{}
+.collect_list li a img{width: 100%;}
+.collect_list li span.top_text{display: block; padding: 10px 0 0 10px; width: 100%; height: 100%; 
+background-color: #ffffffcc; position: absolute; font-size: 12px; font-weight: bold;
+left: 0; top: 0; opacity: 0; transition: all 0.3s;}
+.collect_list li:hover span.top_text{opacity: 1;}
+
+
+
+
+.prev_next{width: 100%; height: 87px;}
+.prev_next ul{display: flex; width: 100%; height: 100%; justify-content: center; align-items: center;}
+.prev_next ul li{padding: 0 10px;}
+.prev_next ul li a{display: block; color: #888; font-size: 11px;}
+.prev_next ul li:nth-child(2) a{color: #333;}
+.prev_next ul li:first-child{background: url(../img/left.png) no-repeat; background-size: 10px; background-position: left; padding-left: 20px;}
+.prev_next ul li:first-child a{color: #333;}
+
+.prev_next ul li:last-child{background: url(../img/right.png) no-repeat; background-size: 10px; background-position: right; padding-right: 20px;}
+.prev_next ul li:last-child a{color: #333;}
+
+/* 반응형에서 보이는 아이들 */
+.login,.account{display: none;}
+.search{position: relative; display: none;}
+.search input{border: none; border-bottom: 1px solid #333 !important; width: 239px; height: 25px;}
+.search span{display: block; width: 18px; height: 18px;}
+.search span img{position: absolute; width: 15px; height: 15px; right: 0; top: -3px;}
+
+.insta{margin-top: 25px; display: none;}
+.insta a img{width: 13px; height: 14px;}
+
+.grove{font-size: 11px; color: #adadad; margin-top: 15px; display: none;}
+
+/* footer */
+.footer{display: flex; justify-content: space-around; height: 200px; font-size: 10px; 
+padding: 0 30px 20px; width: 100%; align-items: center;}
+    .footer ul{width: 20%; }
+    .b_05{width: 374px !important; text-align: left; padding-left: 180px;}
+    .b-05 li a{display: block; }
+
+    .b_02{padding-left: 50px;}
+    .b_03{padding-left: 50px;}
+    .b_04{width: 25% !important;}
+    .footer ul li{margin-bottom: 3px;}
+
+    
+    /* hover 있는 ul */
+    
+    .b_02 li a,.b_03 li a{position: relative; transition: all 0.2s;}
+    .b_02 li a .underline,.b_03 li a .underline {display: block; position: absolute; left: 0; bottom: 0; height: 1px; background-color: #333; transition: all 0.5s; width: 0;}
+    .b_02 li a:hover .underline,.b_03 li a:hover .underline {width: 100%;}
+
+
+    @media(max-width:1020px){
+        .left_nav{background-color: transparent; position: absolute; left: 0; top: 0;}
+        .fix{width: 10%; height: 100%; z-index: 100;}
+        .right{float: none; padding-left: 20px; width: 100%;}
+        .collect_list{justify-content: space-between;}
+
+        .footer{margin-top: 3%; padding: 0 2% !important; flex-wrap: wrap; align-items: start;}
+        .footer ul{width: 48% !important; padding: 0 !important;}
+        .b_01{order: 1;}
+        .b_02{order: 3;}
+        .b_02 li{display: inline-block; margin-left: 6px;}
+        .b_03{display: none !important;}
+        .b_04{order: 2;}
+        .b_05{order: 5;}
+    }/* max_width : 1020px */
+    
+    @media(max-width:754px){
+        .ham_menu{display: block; margin-left: 5px; position: fixed; }
+        .collect_list{width: 100%;}
+        .collect_list li{width: 100%;}
+        .login_section li{display: none;}
+        .only_shown{display: block !important;}
+        .logo{left: 50%; transform: translateX(-50%); top: 10px; z-index: 80;}
+        
+        .fix{width: 60%; background-color: #fff; left: -100%; top: 0; z-index: 300; 
+        padding: 40px 20px; border-right: 1px solid #eee; transition: all 0.5s;}
+        .fix.slidein{left: 0;}
+
+        .main > li{width: 239px; height: 25px;}
+        .main > li .arrow{position: relative; }
+        .main > li .arrow span{width: 20px; height: 20px; position: absolute; left: 220px; 
+        background: url(../img/right_arrow.png) no-repeat center center;
+        filter: brightness(3) contrast(0.2); background-size: 60%;}
+
+        .login,.account{display: block; }
+        .login{margin-top: 30px;}
+        .search{display: block; height: 38px;}
+        .insta{display: block;}
+        .grove{display: block;}
+    }/* max-width : 754px */
